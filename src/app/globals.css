@@ -28,6 +28,15 @@
   }
 }
 
+@keyframes down {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
