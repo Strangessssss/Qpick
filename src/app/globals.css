@@ -37,8 +37,23 @@
   }
 }
 
+@keyframes shake {
+  0% { transform: rotateZ(0);}
+  25% { transform: rotateZ(2deg); }
+  75% { transform: rotateZ(-2deg); }
+  100% { transform:rotateZ(0); }
+}
+
+.shake-hover:hover {
+  animation: shake 0.2s ease-in-out infinite;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Montserrat, SemiBold, sans-serif;
+}
+
+*:focus {
+  outline: none;
 }

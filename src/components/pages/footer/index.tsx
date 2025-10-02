@@ -1,26 +1,35 @@
 import {Globe, Instagram, InstagramIcon} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
     return(
       <div className="widht-full h-[60px] flex justify-center md-[22px] mt-[60px]">
           <div className="flex w-[77%] h-[149px] justify-evenly items-center bg-white rounded-t-[30px]">
-                <div className="font-[700] text-[25px]">QPICK</div>
+                <Link href="/" className="font-[700] text-[25px] hover:text-[#FFA542] transition-all duration-300">QPICK</Link>
                 <div className="flex flex-col gap-[11px] text-[17px] font-[400]">
-                    <div>
+                    <Link href="/saved" passHref
+                          className="hover:text-[#FFA542] transition-all duration-300"
+                    >
                         Избранное
-                    </div>
-                    <div>
+                    </Link>
+                    <Link href="/cart" passHref
+                          className="hover:text-[#FFA542] transition-all duration-300"
+                    >
                         Корзина
-                    </div>
-                    <div>
+                    </Link>
+                    <Link href="/contacts" passHref
+                          className="hover:text-[#FFA542] transition-all duration-300"
+                    >
                         Контакты
-                    </div>
+                    </Link>
                 </div>
                 <div className="flex flex-col gap-[11px] text-[17px] font-[400] font-regular">
-                    <div className="m-2">
+                    <Link href="/privacy"
+                          className="hover:text-[#FFA542] transition-all duration-300"
+                    >
                         Условия сервиса
-                    </div>
+                    </Link>
                     <div className="flex flex-row items-center gap-[15px]">
                         <Globe color="#838383" height="17px"/>
                         <div className="font-[500] text-[15px]">

@@ -11,15 +11,21 @@
   "dependencies": {
     "@heroui/accordion": "^2.2.22",
     "@heroui/react": "^2.8.3",
+    "@react-google-maps/api": "^2.20.7",
     "framer-motion": "^12.23.12",
+    "leaflet": "^1.9.4",
     "lucide-react": "^0.542.0",
     "next": "15.5.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-hook-form": "^7.62.0",
+    "react-hot-toast": "^2.6.0",
+    "react-leaflet": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/leaflet": "^1.9.20",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
