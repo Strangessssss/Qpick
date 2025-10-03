@@ -2,6 +2,8 @@ QPick is an online shop with many animations and pleasent design for different g
 
 Design had been taken from random Figma project and changed for my preferences.
 
+( VIDEO OF WHOLE SITE IS BELOW )
+
 Frontend includes technologies such as:
 
 - Next.js
@@ -22,7 +24,8 @@ This is the main page of the site where all the products are sorted by category 
 
 Accordion (products catalogue) changes dynamically as new product, category or brand is added.
 
+To add any product, category or brand, there is a special page /dashoard that can be accessed only by token given by manager or admin.
+
 https://github.com/user-attachments/assets/655dfaa1-f11a-49d1-a56d-02b3ee918e30
 
-To add any product, category or brand, there is a special page /dashoard that can be accessed only by token given by manager or admin.
 
