@@ -16,7 +16,13 @@ Backend includes technologies such as:
 - Entity Framework Core
 - PostgreSQL
 
+https://github.com/Strangessssss/QPick-Backend/settings
+
+I did not put a lot of effor on the backend the site itself is tiny and too simple.
+
 Whole project had taken 2 weeks to be completed.
+
+
 
 This is the main page of the site where all the products are sorted by category and shown in grid.
 
