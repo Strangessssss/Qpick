@@ -35,5 +35,8 @@
   "orderConfirmation": "Sifariş nömrəniz №{id}, menecerimiz sizinlə əlaqə saxlayacaq.",
   "description": "Təsvir və xüsusiyyətlər",
   "privacy": "Xidmət şərtləri",
-  "contacts": "Əlaqə"
+  "contacts": "Əlaqə",
+  "got-saved": "Seçilmişlərə əlavə edildi ❤️",
+  "got-unsaved": "Seçilmişlərdən silindi 🖤",
+  "got-in-cart": "Səbətə əlavə edildi 🛒"
 }

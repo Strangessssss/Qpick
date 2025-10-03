@@ -35,5 +35,8 @@
   "orderConfirmation": "Your order number is №{id}, our manager will contact you.",
   "description": "Description and Specifications",
   "privacy": "Terms of Service",
-  "contacts": "Contacts"
+  "contacts": "Contacts",
+  "got-saved": "Added to favorites ❤️",
+  "got-unsaved": "Removed from favorites 🖤",
+  "got-in-cart": "Added to cart 🛒"
 }
