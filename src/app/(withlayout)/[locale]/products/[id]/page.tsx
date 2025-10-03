@@ -26,7 +26,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     useEffect(() => {
         getProduct(id)
             .then((p) => setProduct(p))
-            .catch(() => toast.error("Ошибка при загрузке продукта"));
+            .catch(() => toast.error(t("error")));
 
         if (!user) return;
 
@@ -44,10 +44,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             setSaved(savedStatus);
             update?.();
 
-            toast.success(savedStatus ? "Добавлено в избранное ❤️" : "Удалено из избранного 🖤");
+            toast.success(savedStatus ? t("got-saved") : t("got-saved"));
         } catch (err) {
             console.error("Fetch error:", err);
-            toast.error("Не удалось обновить избранное ❌");
+            toast.error(t("error"));
         }
     };
 
@@ -61,10 +61,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             setInCart(true);
             update?.();
 
-            toast.success("Добавлено в корзину 🛒");
+            toast.success(t("got-in-cart"));
         } catch (err) {
             console.error("Fetch error:", err);
-            toast.error("Не удалось добавить в корзину ❌");
+            toast.error(t("error"));
         }
     };
 

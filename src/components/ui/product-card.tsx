@@ -8,6 +8,7 @@ import Product from "@/types/product";
 import { imageBaseUrl } from "@/app/urls";
 import { useUserContext } from "@/contexts/UserContext";
 import toast from "react-hot-toast";
+import { useTranslations } from "next-intl";
 
 type ProductCardProps = {
     product: Product;
@@ -16,6 +17,7 @@ type ProductCardProps = {
 export function ProductCard({ product }: ProductCardProps) {
     const [isSaved, setIsSaved] = useState(false);
     const { user, update } = useUserContext();
+    const t = useTranslations();
 
     const toggle: React.MouseEventHandler<HTMLDivElement> = async (e) => {
         e.preventDefault();
@@ -27,10 +29,10 @@ export function ProductCard({ product }: ProductCardProps) {
             setIsSaved(saved);
             update?.();
 
-            toast.success(saved ? "Добавлено в избранное ❤️" : "Удалено из избранного 🖤");
+            toast.success(saved ? t("got-saved") : t("got-saved"));
         } catch (err) {
             console.error("Fetch error:", err);
-            toast.error("Не удалось обновить избранное ❌");
+            toast.error(t("error"));
         }
     };
 
