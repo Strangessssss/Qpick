@@ -31,6 +31,7 @@ export function AddProductMenu(){
         formData.append("description", data.description);
         formData.append("category", data.category);
         formData.append("brand", data.brand);
+        formData.append("token", localStorage.getItem("token")!);
 
         Object.values(files).forEach(file => {
             if (file) {

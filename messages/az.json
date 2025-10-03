@@ -1,0 +1,39 @@
+{
+  "products-catalogue": "Məhsul kataloqu",
+  "accessories-for": "iPhone 13 Pro Max aksesuarları",
+
+  "saved": "Seçilmişlər",
+  "no-category": "Kateqoriyasız",
+
+  "to-catalogue": "Məhsul kataloquna",
+
+  "cart-empty": "Səbət boşdur",
+  "cart-empty-2": "Amma bunu düzəltmək heç vaxt gec deyil :)",
+
+  "purchase": "Satın al",
+  "add-to-cart": "Səbətə əlavə et",
+  "already-in-cart": "Artıq səbətdədir. Ziyarət et?",
+
+  "payment-method": "Ödəniş metodu",
+  "choose-method": "Metod seçin",
+  "you-got-promo?": "Promokodunuz var?",
+  "promo-code": "Promokod",
+  "recipient-phone": "Alıcı telefonu",
+  "place-order": "Sifarişi rəsmiləşdir",
+  "total": "Cəmi",
+  "cart": "Səbət",
+  "free": "Pulsuz",
+  "from-store": "Mağazadan götürmə",
+  "delivery-1": "Çatdırılma",
+  "delivery-2": "Kuryer çatdırılması",
+  "cash": "Nağd pul",
+  "bank-card": "Kartla",
+  "quantity-increased": "Miqdar artırıldı➕",
+  "quantity-decreased": "Miqdar azaldıldı➖",
+  "product-removed-from-cart": "Məhsul səbətdən silindi 🗑️",
+  "error": "Xəta baş verdi",
+  "orderConfirmation": "Sifariş nömrəniz №{id}, menecerimiz sizinlə əlaqə saxlayacaq.",
+  "description": "Təsvir və xüsusiyyətlər",
+  "privacy": "Xidmət şərtləri",
+  "contacts": "Əlaqə"
+}

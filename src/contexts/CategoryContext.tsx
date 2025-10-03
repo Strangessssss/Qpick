@@ -51,6 +51,10 @@ export function CategoryContextProvider({ children }: CategoryContextProviderPro
         try {
             const res = await fetch(`http://localhost:5200/api/categories/${id}`, {
                 method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json" // <-- important!
+                },
+                body: JSON.stringify({ token: localStorage.getItem("token") })
             });
             if (!res.ok) throw new Error("Failed to delete");
             setCategories((prev) => prev.filter((c) => c.id !== id));

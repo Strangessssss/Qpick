@@ -1,8 +1,22 @@
-import {Globe, Instagram, InstagramIcon} from "lucide-react";
+"use client"
+
+import {Globe} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import {usePathname, useRouter} from "next/navigation";
+import {useTranslations} from "use-intl";
 
 export function Footer() {
+    const pathname = usePathname(); // current path: /en/products/123
+    const router = useRouter();
+
+    const t = useTranslations();
+
+    const setLocale = (locale: string) => {
+        const pathWithoutLocale = pathname.replace(/^\/(en|ru|az)/, "");
+        router.push(`/${locale}${pathWithoutLocale}`);
+    }
+
     return(
       <div className="widht-full h-[60px] flex justify-center md-[22px] mt-[60px]">
           <div className="flex w-[77%] h-[149px] justify-evenly items-center bg-white rounded-t-[30px]">
@@ -11,34 +25,34 @@ export function Footer() {
                     <Link href="/saved" passHref
                           className="hover:text-[#FFA542] transition-all duration-300"
                     >
-                        Избранное
+                        {t("saved")}
                     </Link>
                     <Link href="/cart" passHref
                           className="hover:text-[#FFA542] transition-all duration-300"
                     >
-                        Корзина
+                        {t("cart")}
                     </Link>
                     <Link href="/contacts" passHref
                           className="hover:text-[#FFA542] transition-all duration-300"
                     >
-                        Контакты
+                        {t("contacts")}
                     </Link>
                 </div>
                 <div className="flex flex-col gap-[11px] text-[17px] font-[400] font-regular">
                     <Link href="/privacy"
                           className="hover:text-[#FFA542] transition-all duration-300"
                     >
-                        Условия сервиса
+                        {t("privacy")}
                     </Link>
                     <div className="flex flex-row items-center gap-[15px]">
                         <Globe color="#838383" height="17px"/>
-                        <div className="font-[500] text-[15px]">
+                        <button onClick={() => setLocale("en")} className="font-[500] text-[15px] cursor-pointer transition-all duration-300 hover:text-[#FFA542]">
                             Eng
-                        </div>
-                        <div className="font-[700] text-[15px] text-[#FFA542]">
+                        </button>
+                        <div onClick={() => setLocale("ru")} className="font-[500] text-[15px] cursor-pointer transition-all duration-300 hover:text-[#FFA542]">
                             Рус
                         </div>
-                        <div className="font-[500] text-[15px]">
+                        <div onClick={() => setLocale("az")} className="font-[500] text-[15px] cursor-pointer transition-all duration-300 hover:text-[#FFA542]">
                             Az
                         </div>
                     </div>

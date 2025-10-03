@@ -9,9 +9,12 @@ import {
 import { DropdownMenu } from "../dropdown-menu";
 import {useDropdownMenu} from "@/contexts/DropdownMenuContext";
 import Link from "next/link";
+import {useTranslations} from "use-intl";
 
 
 export function Header() {
+    const t = useTranslations()
+
     const { isOpen, toggle, ref } = useDropdownMenu();
 
     const handleClick = () => {
@@ -27,7 +30,7 @@ export function Header() {
                 <div ref={ref} className="flex flex-row gap-[5px] relative">
                     <button onClick={handleClick} className="flex flex-row items-center gap-[5px] cursor-pointer">
                         <Smartphone className="mr-[10px]" color="#838383"/>
-                        <div className="font-[500] text-[15px]">Выбрать модель телефона</div>
+                        <div className="font-[500] text-[15px]">{t('products-catalogue')}</div>
                         <ChevronDown width={15} strokeWidth={3}/>
                     </button>
                     <DropdownMenu isOpen={isOpen}/>

@@ -2,9 +2,11 @@
 
 import React from "react";
 import { useFormContext, Controller } from "react-hook-form";
+import {useTranslations} from "use-intl";
 
 export default function PhoneNumber() {
     const { control } = useFormContext();
+    const t = useTranslations();
 
     const formatAzerbaijaniNumber = (value: string) => {
         const digits = value.replace(/\D/g, "");
@@ -20,7 +22,7 @@ export default function PhoneNumber() {
     return (
         <div className="bg-white h-[130px] rounded-[30px] shadow-[0_0_20px_0_#0000001A] flex flex-col justify-center gap-5 items-center w-full">
             <div className="flex flex-row justify-between items-center p-[0_23px] w-full font-[600] text-[15px]">
-                <div>Номер получателя</div>
+                <div>{t("recipient-phone")}</div>
             </div>
 
             <Controller

@@ -1,7 +1,6 @@
 "use client"
 
 import { Hero } from "@/components/pages/hero";
-import { CategoriesContainer } from "@/components/pages/categories-container";
 import { ProductsContainer } from "@/components/pages/products-container";
 import { ProductCard } from "@/components/ui/product-card";
 import React, { useEffect, useState, useMemo } from "react";

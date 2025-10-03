@@ -9,10 +9,12 @@ import { useProductContext } from "@/contexts/ProductContext";
 import { useUserContext } from "@/contexts/UserContext";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import {useTranslations} from "use-intl";
 
 export default function ProductPage({ params }: { params: Promise<{ id: string }> }) {
     const { id } = use(params);
     const router = useRouter();
+    const t = useTranslations();
 
     const { getProduct } = useProductContext();
     const [product, setProduct] = useState<Product | null>();
@@ -104,7 +106,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             <div className="w-[77%] flex flex-row justify-between gap-[20px]">
                 <div className="flex-1/4 bg-[#F9F9F9] rounded-[15px]">
                     <div className="shadow-2xl bg-white w-full rounded-[15px] p-[20px] flex flex-col justify-start items-start gap-[20px] ">
-                        Описание и характеристики
+                        {t("description")}
                     </div>
                     <div className="min-h-[100px] w-full rounded-[15px] p-[20px] flex flex-col justify-start items-start gap-[20px] whitespace-pre-line">
                         {product?.description.replace(/;/g, "\n")}
@@ -113,10 +115,10 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
                 <div className="flex-1 flex flex-col justify-start items-start gap-[20px]">
                     <button onClick={handleBuy} className="bg-[#101010] cursor-pointer text-white font-[500] text-[20px] rounded-[15px] h-[45px] w-full">
-                        Купить
+                        {t("purchase")}
                     </button>
                     <button onClick={!inCart ? toggleCart : () => router.push("/cart")} className="bg-[#101010] cursor-pointer text-white font-[500] text-[20px] rounded-[15px] h-[45px] w-full">
-                        {!inCart ? "Добавить в корзину!" : "Уже в корзине. Посетить?"}
+                        {!inCart ? t("add-to-cart") : t("already-in-cart")}
                     </button>
                 </div>
             </div>

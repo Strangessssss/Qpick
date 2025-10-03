@@ -1,0 +1,39 @@
+{
+  "products-catalogue": "Product Catalog",
+  "accessories-for": "Accessories for iPhone 13 Pro Max",
+
+  "saved": "Favorites",
+  "no-category": "Uncategorized",
+
+  "to-catalogue": "To Product Catalog",
+
+  "cart-empty": "Cart is empty",
+  "cart-empty-2": "But it's never too late to fix that :)",
+
+  "purchase": "Buy",
+  "add-to-cart": "Add to Cart",
+  "already-in-cart": "Already in Cart. Visit?",
+
+  "payment-method": "Payment Method",
+  "choose-method": "Choose Method",
+  "you-got-promo?": "Got a Promo Code?",
+  "promo-code": "Promo Code",
+  "recipient-phone": "Recipient Phone",
+  "place-order": "Place Order",
+  "total": "Total",
+  "cart": "Cart",
+  "free": "Free of Charge",
+  "from-store": "Store Pickup",
+  "delivery-1": "Delivery",
+  "delivery-2": "Courier Delivery",
+  "cash": "Cash",
+  "bank-card": "Card",
+  "quantity-increased": "Quantity Increased➕",
+  "quantity-decreased": "Quantity Decreased➖",
+  "product-removed-from-cart": "Product Removed from Cart 🗑️",
+  "error": "Something went wrong",
+  "orderConfirmation": "Your order number is №{id}, our manager will contact you.",
+  "description": "Description and Specifications",
+  "privacy": "Terms of Service",
+  "contacts": "Contacts"
+}

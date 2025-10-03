@@ -5,6 +5,7 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import { Store, Truck } from "lucide-react";
 import LatLng from "@/types/lat-lng";
 import { useFormContext, Controller } from "react-hook-form";
+import {useTranslations} from "use-intl";
 
 const containerStyle = {
     width: "100%",
@@ -79,6 +80,7 @@ interface DeliveryMapProps {
 
 export function DeliveryMap({ deliveryPrice }: DeliveryMapProps) {
     const { setValue, watch, control } = useFormContext();
+    const t = useTranslations();
 
     const selectedValue = watch("deliveryType") || "store";
 
@@ -91,7 +93,7 @@ export function DeliveryMap({ deliveryPrice }: DeliveryMapProps) {
     return (
         <div className="w-full h-[270px] bg-white rounded-[30px] overflow-hidden flex flex-col justify-start items-center pl-[22px] pr-[22px] pt-[15px] pb-[15px] gap-[17px] shadow-[0_0_20px_0_#0000001A]">
             <div className="w-full h-[20px] text-black font-[600] text-[20px]">
-                Доставка
+                {t("delivery-1")}
             </div>
             <div className="w-[100%] flex-1 flex justify-center items-center pl-[7px] pr-[7px]">
                 {selectedValue === "delivery" ? (
@@ -118,8 +120,8 @@ export function DeliveryMap({ deliveryPrice }: DeliveryMapProps) {
                         defaultValue="store"
                         render={({ field }) => (
                             <select {...field}>
-                                <option value="store">Самовывоз</option>
-                                <option value="delivery">Доставка курьером</option>
+                                <option value="store">{t("from-store")}</option>
+                                <option value="delivery">{t("delivery-2")}</option>
                             </select>
                         )}
                     />
@@ -127,7 +129,7 @@ export function DeliveryMap({ deliveryPrice }: DeliveryMapProps) {
                 <div className="font-[600] text-[15px] text-center">
                     {selectedValue === "delivery"
                         ? `${deliveryPrice} AZN`
-                        : "Ödəniş tələb olunmur"}
+                        : t("free")}
                 </div>
             </div>
         </div>

@@ -49,6 +49,10 @@ export function ProductContextProvider({ children }: ProductContextProviderProps
         try {
             const res = await fetch(`http://localhost:5200/api/products/${id}`, {
                 method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json" // <-- important!
+                },
+                body: JSON.stringify({ token: localStorage.getItem("token") })
             });
             if (!res.ok) throw new Error("Failed to delete");
             setProducts((prev) => prev.filter((p) => p.id !== id));

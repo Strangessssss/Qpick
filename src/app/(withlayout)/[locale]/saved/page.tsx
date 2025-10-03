@@ -7,9 +7,12 @@ import {ProductCard} from "@/components/ui/product-card";
 import Product from "@/types/product";
 import Image from "next/image";
 import {redirect} from "next/navigation";
+import {useTranslations} from "use-intl";
 
 export default function Saved() {
     const { user, update } = useUserContext();
+
+    const t = useTranslations();
 
     useEffect(() => {
         update();
@@ -18,7 +21,7 @@ export default function Saved() {
     const groupedProducts = useMemo(() => {
         if (!user?.savedProducts) return {};
         return user.savedProducts.reduce((acc: Record<string, Product[]>, product) => {
-            const categoryName = product.category.name ?? "Без категории";
+            const categoryName = product.category.name ?? t("no-category");
             if (!acc[categoryName]) acc[categoryName] = [];
             acc[categoryName].push(product);
             return acc;
@@ -32,13 +35,13 @@ export default function Saved() {
                     <Image src="/empty-cart.png" alt="empty-saved" fill className="object-contain" />
                 </div>
                 <div className="font-[500] text-[30px] text-center w-[40%] mt-[20px]">
-                    Корзина пуста
+                    {t("cart-empty")}
                 </div>
                 <div className="font-[400] text-[20px] text-center text-[#838383]">
-                    Но это никогда не поздно исправить :)
+                    {t("cart-empty-2")}
                 </div>
                 <button onClick={() => redirect("/")} className="w-[540px] h-[65px] bg-black mt-[30px] rounded-[20px] text-white font-[600] text-[20px] flex justify-center items-center cursor-pointer hover:text-black hover:bg-[#FFA542] transition-all duration-300">
-                    В каталог товаров
+                    {t("to-catalogue")}
                 </button>
             </div>
         );

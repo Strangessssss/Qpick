@@ -6,6 +6,7 @@ import { imageBaseUrl } from "@/app/urls";
 import CartProduct from "@/types/cartProduct";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import {useTranslations} from "use-intl";
 
 interface CartCardProps {
     product: CartProduct;
@@ -13,6 +14,7 @@ interface CartCardProps {
 
 export function CartCard({ product }: CartCardProps) {
     const [cartProduct, setCartProduct] = useState<CartProduct>(product);
+    const t = useTranslations();
 
     if (!cartProduct || cartProduct.quantity === 0) return null;
 
@@ -28,13 +30,13 @@ export function CartCard({ product }: CartCardProps) {
             const data: CartProduct = await res.json();
             setCartProduct(data);
 
-            if (quantity === 0) toast.success("Товар удалён из корзины 🗑️");
-            else if (action === "increase") toast.success("Количество увеличено ➕");
-            else if (action === "decrease") toast.success("Количество уменьшено ➖");
+            if (quantity === 0) toast.success(t("product-removed-from-cart"));
+            else if (action === "increase") toast.success(t("quantity-increased"));
+            else if (action === "decrease") toast.success(t("quantity-decreased"));
 
         } catch (err) {
             console.error("Fetch error:", err);
-            toast.error("Не удалось обновить корзину ❌");
+            toast.error(t("error"));
         }
     };
 

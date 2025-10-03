@@ -18,6 +18,7 @@ export function AddBrandMenu() {
         const formData = new FormData();
 
         formData.append("name", data.name);
+        formData.append("token", localStorage.getItem("token")!);
 
         try {
             const res = await addBrand(formData);

@@ -3,8 +3,6 @@
 import { useForm } from "react-hook-form";
 import React from "react";
 import { Plus } from "lucide-react";
-import { baseApiUrl } from "@/app/urls";
-import {useProductContext} from "@/contexts/ProductContext";
 import {useCategoryContext} from "@/contexts/CategoryContext";
 
 type FormData = {
@@ -21,6 +19,7 @@ export function AddCategoryMenu() {
         const formData = new FormData();
 
         formData.append("name", data.name);
+        formData.append("token", localStorage.getItem("token")!);
 
         try {
             const res = await addCategory(formData);
