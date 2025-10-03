@@ -48,7 +48,9 @@ export function CartCard({ product }: CartCardProps) {
             updateCart(cartProduct.quantity - 1, "decrease");
         }
     };
-    const handleDelete = () => updateCart(0, "delete");
+    const handleDelete = () => {
+        updateCart(0, "delete")
+    };
 
     return (
         <div className="w-full h-[200px] bg-white rounded-[30px] shadow-[0_0_20px_0_#0000001A] flex flex-row justify-between relative">
@@ -76,7 +78,7 @@ export function CartCard({ product }: CartCardProps) {
                         <button
                             type="button"
                             onClick={handleIncrease}
-                            className="h-[70%] aspect-square bg-[#FFCE7F] rounded-[30px] text-white font-[600] text-[17px]"
+                            className="h-[70%] aspect-square bg-[#FFCE7F] rounded-[30px] transition-all duration-300 hover:bg-orange-400 active:bg-black cursor-pointer text-white font-[600] text-[17px]"
                         >
                             +
                         </button>

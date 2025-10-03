@@ -29,7 +29,7 @@ export function ProductCard({ product }: ProductCardProps) {
             setIsSaved(saved);
             update?.();
 
-            toast.success(saved ? t("got-saved") : t("got-saved"));
+            toast.success(saved ? t("got-saved") : t("got-unsaved"));
         } catch (err) {
             console.error("Fetch error:", err);
             toast.error(t("error"));

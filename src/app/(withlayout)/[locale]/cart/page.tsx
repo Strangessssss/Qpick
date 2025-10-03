@@ -74,12 +74,12 @@ export default function Cart() {
 
             const orderId = await res.json();
 
-            toast.success("Заказ успешно оформлен 🎉");
+            toast.success(t("order-success"));
 
             reset();
             router.push(`/orders/${orderId}`);
         } catch (err: any) {
-            toast.error(err.message || "Что-то пошло не так ❌");
+            toast.error(err.message || t("error"));
         }
     };
 

@@ -38,5 +38,6 @@
   "contacts": "Contacts",
   "got-saved": "Added to favorites ❤️",
   "got-unsaved": "Removed from favorites 🖤",
-  "got-in-cart": "Added to cart 🛒"
+  "got-in-cart": "Added to cart 🛒",
+  "order-success": "Order successfully placed 🎉"
 }

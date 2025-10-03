@@ -44,7 +44,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             setSaved(savedStatus);
             update?.();
 
-            toast.success(savedStatus ? t("got-saved") : t("got-saved"));
+            toast.success(savedStatus ? t("got-saved") : t("got-unsaved"));
         } catch (err) {
             console.error("Fetch error:", err);
             toast.error(t("error"));
