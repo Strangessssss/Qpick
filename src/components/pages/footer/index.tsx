@@ -32,11 +32,6 @@ export function Footer() {
                     >
                         {t("cart")}
                     </Link>
-                    <Link href="/contacts" passHref
-                          className="hover:text-[#FFA542] transition-all duration-300"
-                    >
-                        {t("contacts")}
-                    </Link>
                 </div>
                 <div className="flex flex-col gap-[11px] text-[17px] font-[400] font-regular">
                     <Link href="/privacy"
